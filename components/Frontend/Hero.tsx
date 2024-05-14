@@ -2,20 +2,24 @@
 
 import React from "react";
 import SearchBar from "./SearchBar";
+import TransitionalText from "./TransitionalText";
+import { Pill } from 'lucide-react';
 
 const Hero = () => {
+
+  const TEXTS = ['Wellness', 'Immunity', 'Healthfulness', 'Healing', 'Rehabilitation'];
   return (
     <>
      
-      <div className="relative pb-[50px] pt-[60px] dark:bg-dark lg:pt-[75px] max-w-7xl mx-auto">
+      <div className="relative pb-[50px] pt-[20px] lg:pt-[75px] max-w-7xl mx-auto">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 lg:w-5/12">
-              <div className="hero-content">
-                <h1 className="mb-5 mt-24 text-4xl font-bold !leading-[1.308] text-dark dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                <span className="text-indigo-500 text-6xl">Empowering </span> Your Path to <span className="text-indigo-500 text-6xl">Wellness </span>Begins Here<span className="text-indigo-500 ">.</span>
+              <div className="hero-content max-[1024px]:ml-8">
+                <h1 className="mb-5 mt-8 text-2xl font-bold !leading-[1.508] text-dark dark:text-white sm:text-[28px] lg:text-[36px] xl:text-[23px] text-gray-700">
+                <span className="text-indigo-500 text-5xl">Empowering  </span>Your Path to <span className="text-indigo-500 text-5xl"><TransitionalText TEXTS = {TEXTS} />  </span>Begins Here<span className="text-indigo-500 ">.</span>
                 </h1>
-                <p className="mb-16 max-w-[480px] text-base text-body-color dark:text-dark-6">
+                <p className="mb-6 max-w-[480px] text-gray-500 text-body-color dark:text-dark-6">
            
                 With a commitment to excellence and a team of dedicated healthcare professionals, we provide personalized and compassionate care tailored to meet your unique needs.
                 </p>
@@ -24,92 +28,55 @@ const Hero = () => {
                  <SearchBar />
 
                   {/* CTA BUTTON*/}
-                <ul className="flex flex-wrap items-center mt-6">
-                  <li>
+                <ul className="flex  items-center  mt-4">
+                  <li className="w-full">
                     <a
                       href="/#"
-                      className="inline-flex items-center justify-center bg-primary px-6 py-3 text-center text-base font-medium text-indigo-500 border border-indigo-500 rounded-full  hover:bg-indigo-500 hover:text-white duration-300 transition-all lg:px-7"
+                      className="inline-flex text-nowrap items-center justify-center capitalize bg-primary px-6 py-3 text-center text-sm font-semibold text-indigo-500 border border-indigo-500 rounded-full  hover:bg-indigo-500 hover:text-white duration-300 transition-all "
                     >
-                      Get Started
+                      I Need to see a Doctor Urgently
                     </a>
                   </li>
-                  <li>
+                  <li className="max-[960px]:mr-56">
                     <a
                       href="/#"
-                      className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-[#464646] hover:text-primary dark:text-white hover:scale-110  duration-300 transition-all"
+                      className="inline-flex items-center justify-center capitalize px-5 py-3 text-center text-sm text-indigo-500 font-semibold  hover:scale-110  duration-300 transition-all xl:mt-4"
                     >
-                      <span className="mr-2">
-                        <svg
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="12" cy="12.6152" r="12" fill="#3758F9" />
-                          <rect
-                            x="7.99893"
-                            y="14.979"
-                            width="8.18182"
-                            height="1.63636"
-                            fill="white"
-                          />
-                          <rect
-                            x="11.2717"
-                            y="7.61523"
-                            width="1.63636"
-                            height="4.09091"
-                            fill="white"
-                          />
-                          <path
-                            d="M12.0898 14.1606L14.9241 11.0925H9.25557L12.0898 14.1606Z"
-                            fill="white"
-                          />
-                        </svg>
+
+<Pill className="flex-shrink-0 h-5 w-5 font-semibold"/>
+                      <span className="ml-2 text-nowrap">
+                      I need a prescription refill
                       </span>
-                      Download App
+                      
                     </a>
                   </li>
                 </ul>
-                {/* <div className="clients pt-16">
-                  <h6 className="mb-6 flex items-center text-xs font-normal text-body-color dark:text-dark-6">
-                    Some Of Our Clients
-                    <span className="ml-3 inline-block h-px w-8 bg-body-color"></span>
-                  </h6>
+               <div className="py-4 flex gap-4">
+                   <div className="flex flex-col items-center justify-center">
+                         <span className="font-semibold text-indigo-700">50+</span>
+                         <span className="text-sm text-gray-500">Specialists</span>
+                   </div>
 
-                  <div className="flex items-center space-x-4">
-                    <SingleImage
-                      href="#"
-                      imgSrc="https://cdn.tailgrids.com/2.0/image/assets/images/brands/ayroui.svg"
-                    />
-
-                    <SingleImage
-                      href="#"
-                      imgSrc="https://cdn.tailgrids.com/2.0/image/assets/images/brands/graygrids.svg"
-                    />
-
-                    <SingleImage
-                      href="#"
-                      imgSrc="https://cdn.tailgrids.com/2.0/image/assets/images/brands/uideck.svg"
-                    />
-                  </div>
-                </div> */}
-
+                   <div className="flex flex-col items-center justify-center">
+                         <span className="font-semibold text-indigo-700">150+</span>
+                         <span className="text-sm text-gray-500">Patients</span>
+                   </div>
+               </div>
                
               </div>
             </div>
             <div className="hidden px-4 lg:block lg:w-1/12"></div>
-            <div className="w-full px-4 lg:w-6/12">
-              <div className="lg:ml-auto lg:text-right">
+            <div className="w-full px-4 lg:w-5/12">
+              <div className=" ml-8 lg:ml-auto lg:text-right">
                 <div className="relative z-20 inline-block pt-11 lg:pt-0">
              
                 <img
                     src="https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png"
                     alt="hero"
-                    className="max-w-full lg:ml-auto"
+                    className=" max-w-full lg:ml-auto"
                   />
                
-                  <span className="absolute -bottom-8 -left-8 z-0">
+                  <span className="absolute -bottom-8 -left-8 z-0 ml-6">
                     <svg
                       width="93"
                       height="93"

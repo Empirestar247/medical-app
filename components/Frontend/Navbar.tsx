@@ -41,8 +41,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-indigo-500">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header className="">
+      <nav className="mx-auto flex max-w-7xl items-center border-b border-gray-50 justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -53,18 +53,18 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-indigo-600"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-8 w-8" aria-hidden="true" />
+            <Bars3Icon className="h-8 w-8 " aria-hidden="true" />
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-50 hover:scale-110  duration-300 transition-all">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-indigo-600 hover:scale-110  duration-300 transition-all">
             Doctors
-              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-50" aria-hidden="true" />
+              <ChevronDownIcon className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
             </Popover.Button>
 
             <Transition
@@ -76,7 +76,7 @@ export default function Navbar() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -right-[250px] top-full z-30 mt-6 h-[460px] w-[550px] overflow-hidden rounded-3xl bg-gray-100 ring-1 ring-gray-900/5 ">
+              <Popover.Panel className="absolute -right-[250px] top-full z-40 mt-6 h-[460px] w-[550px] overflow-hidden rounded-3xl bg-gray-100 ring-1 ring-gray-900/5 ">
                 <div className="p-4 grid grid-cols-1 lg:grid-cols-2 gap-2  ">
                   {products.map((item) => (
                     <div
@@ -116,18 +116,18 @@ export default function Navbar() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-50 hover:scale-110  duration-300 transition-all">
+          <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:scale-110  duration-300 transition-all">
           Services
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-50 hover:scale-110  duration-300 transition-all">
+          <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:scale-110  duration-300 transition-all">
         About Us
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-50 hover:scale-110  duration-300 transition-all">
+          <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 hover:scale-110  duration-300 transition-all">
             Contact
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-indigo-600 py-1 px-4 rounded-full bg-white hover:scale-110  duration-300 transition-all">
+          <a href="#" className="text-sm font-semibold leading-6 border border-indigo-600 text-indigo-600 py-1 px-4 rounded-full bg-white hover:scale-110  duration-300 transition-all">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>

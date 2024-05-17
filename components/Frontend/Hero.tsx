@@ -9,7 +9,7 @@ const Hero = () => {
 
   const TEXTS = ['Wellness', 'Immunity', 'Healthfulness', 'Healing', 'Rehabilitation'];
   return (
-    <>
+    <div className="mt-[100px]">
      
       <div className="relative pb-[50px] pt-[20px] lg:pt-[75px] max-w-7xl mx-auto">
         <div className="container">
@@ -117,7 +117,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

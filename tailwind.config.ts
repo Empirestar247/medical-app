@@ -1,3 +1,4 @@
+import flowbite from "flowbite-react/tailwind";
 import type { Config } from "tailwindcss"
 
 const config = {
@@ -7,6 +8,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    flowbite.content(),
 	],
   prefix: "",
   theme: {
@@ -19,6 +21,8 @@ const config = {
     },
     extend: {
       colors: {
+        'indigo-700': '#4338ca',
+        'pink-400': '#f472b6',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,7 +78,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms"), flowbite.plugin(),],
 } satisfies Config
 
 export default config

@@ -1,7 +1,9 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
+// import Link from "next/link"
+import { useState, useEffect }  from 'react'
+
 
 import { cn } from "@/lib/utils"
 // import { Icons } from "@/components/icons"
@@ -126,8 +128,37 @@ const megaMenu = [
 ]
 
 export default function MegaMenu() {
+
+  const [isScrollingUp, setIsScrollingUp] = useState(false);
+
+  useEffect(() => {
+    let lastScrollTop = window.pageYOffset;
+  
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        setIsScrollingUp(false);
+      } else {
+        // Scrolling up
+        setIsScrollingUp(true);
+      }
+  
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+
   return (
-    <NavigationMenu>
+    <NavigationMenu  className={`w-full ${isScrollingUp ? 'bg-transparent' : 'bg-slate-100'}`}>
       <NavigationMenuList className="space-x-2">
        {
            megaMenu.map((item, i) => {
@@ -135,7 +166,7 @@ export default function MegaMenu() {
                
         <NavigationMenuItem  key={i}>
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-        <NavigationMenuContent>
+        <NavigationMenuContent >
           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
             {item.services.map((component) => (
               <ListItem
